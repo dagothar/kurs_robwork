@@ -1,0 +1,113 @@
+<!-- Bender laboratory stand in BUT -->
+<WorkCell name="Bender">
+  
+  <!---------- STAND ---------->
+	<!-- stand -->
+	<Frame name="Stand" refframe="WORLD">
+		<RPY>180 0 0</RPY>
+		<Pos>0.6 1.2 -0.76</Pos>
+		
+		<Drawable name="FrameGeo" refframe="Stand">
+			<RPY>0 0 90</RPY>
+			<Pos>0 2.4 0</Pos>
+			<Polytope file="geometry/stelaz"/>
+		</Drawable>
+	</Frame>
+	
+	<!-- table -->
+	<Frame name="Table" refframe="Stand">
+		<RPY>0 0 0</RPY>
+		<Pos>0 0 0.72</Pos>
+		
+		<Drawable name="TableGeo" refframe="Table">
+			<RPY>0 0 90</RPY>
+			<Pos>0 0 0</Pos>
+			<Polytope file="geometry/blat"/>
+		</Drawable>
+	</Frame>
+  
+  <!-- sponge -->
+	<Frame name="Sponge" refframe="Stand">
+		<RPY>0 0 0</RPY>
+		<Pos>0 0 0.738</Pos>
+		
+		<Drawable name="TableGeo" refframe="Sponge">
+			<RPY>0 0 90</RPY>
+			<Pos>0 0 0</Pos>
+			<Polytope file="geometry/sponge"/>
+		</Drawable>
+	</Frame>
+	
+  
+  
+  <!---------- ROBOTS ---------->
+	<!-- robot 1(L) -->
+	<Frame name="robot" refframe="Table">
+		<RPY>90 0 0</RPY>
+		<Pos>0.06667 1.22667 0.018</Pos>
+	</Frame>
+	<Include file="UR5/UR.wc.xml"/>
+  
+  <!-- gripper -->
+  <Frame name="brace" refframe="robot.TCP">
+    <RPY>0 0 0</RPY>
+    <Pos>0 0 0.002</Pos>
+    <Drawable name="Brace1Geo" refframe="brace">
+			<RPY>180 0 90</RPY>
+			<Pos>0 0 0</Pos>
+			<Polytope file="evg55/geometry/brace.ac"/>
+		</Drawable>
+  </Frame>
+  <Frame name="gripper" refframe="brace">
+    <RPY>0 0 0</RPY>
+    <Pos>0 0 0.01</Pos>
+  </Frame>
+  <Include file="evg55/EVG55.xml"/>
+  
+  <Frame name="TCP" refframe="gripper.TCP">
+  </Frame>  
+  
+  
+  <!---------- OBJECTS ---------->
+  
+  <!-- block1 -->
+  <Frame name="fixture" refframe="WORLD" type="Movable">
+    <RPY>0 0 0</RPY>
+		<Pos>0.5 0.3 0.0401</Pos>
+    
+    <Drawable name="fixtureGeo" refframe="fixture">
+			<RPY>0 0 90</RPY>
+			<Pos>0 0 -0.03</Pos>
+			<Polytope file="geometry/block.ac"/>
+		</Drawable>
+  </Frame>
+  
+  <Frame name="fixture_round" refframe="fixture">
+    <RPY>0 0 0</RPY>
+		<Pos>-0.045 0 0</Pos>
+  </Frame>
+  
+  <Frame name="fixture_square" refframe="fixture">
+    <RPY>0 0 0</RPY>
+		<Pos>0.044 0 0</Pos>
+  </Frame>
+  
+  <!-- round peg -->
+  <Frame name="round_peg" refframe="WORLD" type="Movable">
+    <RPY>0 0 0</RPY>
+		<Pos>0 -0.05 0</Pos>
+    
+    <Drawable name="round_pegGeo" refframe="round_peg">
+			<RPY>0 0 0</RPY>
+			<Pos>0 0 0</Pos>
+			<Polytope file="geometry/round_peg"/>
+		</Drawable>
+  </Frame>
+  
+  <!-- square peg -->
+  <!-- ... -->
+   
+	<!-- collision setup -->
+	<CollisionSetup file="SceneCollisionSetup.xml"/> 
+
+</WorkCell>

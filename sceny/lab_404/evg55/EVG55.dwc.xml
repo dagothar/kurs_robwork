@@ -1,0 +1,27 @@
+<IncludeData>
+	<RigidDevice device="gripper">
+		<!-- base -->
+    <RefBase body="robot.Joint5"/>
+		<!--<RigidBase frame="Base">
+			<MaterialID>Aluminum</MaterialID>
+		</RigidBase>-->
+		
+		<!-- joints -->
+    <RigidJoint joint="LeftFinger">
+			<Mass>0.1</Mass>
+			<EstimateInertia/>
+			<MaterialID>Aluminum</MaterialID>
+		</RigidBody>
+    
+		<RigidJoint joint="RightFinger">
+			<Mass>0.1</Mass>
+			<EstimateInertia/>
+			<MaterialID>Aluminum</MaterialID>
+		</RigidBody>
+		
+		<!-- force limits -->
+		<ForceLimit joint="LeftFinger">1</ForceLimit>
+		<ForceLimit joint="RightFinger">1</ForceLimit>
+
+	</RigidDevice>
+</IncludeData>

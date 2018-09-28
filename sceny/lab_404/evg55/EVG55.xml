@@ -1,0 +1,66 @@
+<TreeDevice name="gripper">
+
+	<!-- base -->
+	<Frame name="Base" type="Movable">
+		<RPY>0 0 0</RPY>
+		<Pos>0 0 0</Pos>
+	</Frame>
+
+	<!-- left finger -->
+	<Joint name="LeftFinger" type="Prismatic">
+		<RPY>0 -90 0</RPY>
+		<Pos>0 0 0.0892</Pos>
+	</Joint>
+	
+	<Frame name="TCPLeftFinger" refframe="LeftFinger" type="EndEffector">
+    <RPY>0 0 0</RPY>
+		<Pos>0.08 0 0</Pos>
+	</Frame>
+
+	<!-- right finger -->
+	<Joint name="RightFinger" refframe="Base" type="Prismatic">
+		<RPY>0 -90 0</RPY>
+		<Pos>0 0 0.0892</Pos>
+		<Depend on="LeftFinger" gain="-1" offset="0"/>
+	</Joint>
+	
+	<Frame name="TCPRightFinger" refframe="RightFinger" type="EndEffector">
+    <RPY>0 0 0</RPY>
+		<Pos>0.08 0 0</Pos>
+	</Frame>
+
+	<!-- limits -->
+	<PosLimit refjoint="LeftFinger" min="0" max="0.05"/>
+	<VelLimit refjoint="LeftFinger" max="0.1"/>
+
+	<!-- models -->
+	<Drawable name="BaseGeo" refframe="Base">
+		<RPY>0 0 90</RPY>
+		<Pos>0 0 0</Pos>
+		<Polytope file="geometry/evg55.ac"/>
+	</Drawable>
+	
+	<Drawable name="LeftFingerGeo" refframe="LeftFinger">
+		<RPY>0 0 -90</RPY>
+		<Pos>0 0.00825 0</Pos>
+		<Polytope file="geometry/finger.ac"/>
+	</Drawable>
+
+	<Drawable name="RightFingerGeo" refframe="RightFinger">
+		<RPY>0 0 90</RPY>
+		<Pos>0 -0.00825 0</Pos>
+		<Polytope file="geometry/finger.ac"/>
+	</Drawable>
+  
+  <Frame name="TCP" refframe="Base">
+    <RPY>0 0 0</RPY>
+    <Pos>0 0 0.1692</Pos>
+  </Frame>
+
+	<!-- collision setup -->
+	<CollisionSetup file ="collision_setup.xml"/>
+  
+  <Q name="Home">0.015</Q>
+	
+</TreeDevice>
+

@@ -1,0 +1,58 @@
+<DynamicWorkcell workcell="Scene.wc.xml">
+	<!-- physics engine parameters -->
+	<PhysicsEngine>
+		<RestitutionModel>Newton</RestitutionModel>
+		<ContactModel>Guendel</ContactModel>
+		<AutoDisable>true</AutoDisable>
+		<Property name="StepMethod">WorldStep</Property>
+		<Property name="MaxCorrectingVelocity" type="float">0.5</Property>
+	</PhysicsEngine>
+
+	<!-- gravity -->
+	<Gravity>0 0 -9.81</Gravity>
+
+	<!-- materials -->
+	<Include file="DynamicMaterialDataBase.xml"/>
+	
+	<!-- fixed bodies -->
+	<FixedBody frame="Table">
+		<Mass>1000</Mass>
+		<EstimateInertia/>
+		<Integrator>Euler</Integrator>
+		<MaterialID>Aluminum</MaterialID>
+	</FixedBody>
+  
+  <FixedBody frame="Stand">
+		<Mass>1000</Mass>
+		<EstimateInertia/>
+		<Integrator>Euler</Integrator>
+		<MaterialID>Aluminum</MaterialID>
+	</FixedBody>
+  
+  <FixedBody frame="Sponge">
+		<Mass>1000</Mass>
+		<EstimateInertia/>
+		<Integrator>Euler</Integrator>
+		<MaterialID>Rubber</MaterialID>
+	</FixedBody>
+  
+  <!-- movable objects -->
+  <RigidBody frame="fixture">
+		<Mass>1</Mass>
+		<EstimateInertia/>
+		<Integrator>Euler</Integrator>
+		<MaterialID>Aluminum</MaterialID>
+	</RigidBody>
+  
+  <RigidBody frame="round_peg">
+		<Mass>0.05</Mass>
+		<EstimateInertia/>
+		<Integrator>Euler</Integrator>
+		<MaterialID>Aluminum</MaterialID>
+	</RigidBody>
+	
+	<!-- robots -->
+	<Include file="UR5/UR.dwc.xml"/>
+	<Include file="evg55/EVG55.dwc.xml"/>
+
+</DynamicWorkcell>

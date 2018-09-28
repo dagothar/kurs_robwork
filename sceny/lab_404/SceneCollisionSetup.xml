@@ -1,0 +1,18 @@
+<CollisionSetup>
+	<Exclude>
+		<FramePair first="Stand" second="Table"/>
+		<FramePair first="Table" second="robot.Base"/>
+    <FramePair first="Table" second="Sponge"/>
+    <FramePair first="Stand" second="Sponge"/>
+    <FramePair first="Sponge" second="robot.Base"/>
+    <FramePair first="Sponge" second="robot.Joint1"/>
+    <FramePair first="Sponge" second="robot.Joint2"/>
+    <FramePair first="Sponge" second="Block1"/>
+    <FramePair first="Block1" second="Block1RoundHole"/>
+    <FramePair first="Block1" second="Block1SquareHole"/>
+    <FramePair first="robot.Joint6" second="brace"/>
+    <FramePair first="gripper.Base" second="brace"/>
+    <FramePair first="gripper.Base" second="robot.Joint6"/>
+		
+   </Exclude>
+</CollisionSetup>
