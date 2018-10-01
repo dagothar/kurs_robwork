@@ -1,0 +1,5 @@
+<CollisionSetup>
+  <Exclude>
+    <FramePair first="kolumna" second="robot.Joint0"/>
+  </Exclude>
+</CollisionSetup>

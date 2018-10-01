@@ -1,0 +1,15 @@
+<WorkCell name="my_workcell">
+  
+  <!-- define a frame where we place our robot -->
+  <Frame name="robot" refframe="WORLD">
+		<RPY>0 0 0</RPY>
+		<Pos>0 0 0</Pos>
+	</Frame>  
+  
+  <!-- include the robot file -->
+  <Include file ="../robot/robot.xml"/>
+  
+  <!-- define the collision setup for the workcell -->
+  <CollisionSetup file="collision_setup.xml"/>
+  
+</WorkCell>

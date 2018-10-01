@@ -1,0 +1,21 @@
+<WorkCell name="w1">
+  
+  <Frame name="uklad1" refframe="WORLD" type="Fixed">
+    <RPY>90 45 0</RPY>
+    <Pos>0 0 2</Pos>
+  </Frame>
+  
+  <!--Frame name="uklad2" refframe="WORLD" type="Fixed">
+    <Transform>
+      1 0 0 2
+      0 1 0 0.1
+      0 0 1 -1
+    </Transform>
+  </Frame-->
+  
+   <Frame name="uklad3" refframe="uklad1" type="Movable">
+    <RPY>0 0 0</RPY>
+    <Pos>0 0 1</Pos>
+  </Frame>
+  
+</WorkCell>

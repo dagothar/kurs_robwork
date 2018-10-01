@@ -1,0 +1,28 @@
+<WorkCell name="w1">
+  
+  <Frame name="rob" refframe="WORLD">
+    <RPY>0 0 0</RPY>
+    <Pos>0 0 0</Pos>
+  </Frame>
+  
+  <SerialDevice name="rob">
+    <Frame name="baza" />
+    
+    <Joint name="j1" type="Revolute">
+      <RPY>0 0 0</RPY>
+      <Pos>0 0 0.1</Pos>
+      <PosLimit min="-180" max="180"/>
+    </Joint>
+    
+    <!-- obrotowy -->
+    <DHJoint name="j2" alpha="0" a="0.1" d="0.1" offset="0">
+      <PosLimit min="-180" max="180"/>
+    </DHJoint>
+    
+    <!-- przesuwny -->
+    <DHJoint name="j3" alpha="0" a="0.1" theta="0" offset="0">
+      <PosLimit min="-1" max="1"/>
+    </DHJoint>
+  </SerialDevice>
+  
+</WorkCell>
