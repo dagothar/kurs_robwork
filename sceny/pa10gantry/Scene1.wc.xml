@@ -1,0 +1,19 @@
+<WorkCell name="Single PA10 Demo">
+
+ <Frame name="PA10" refframe="WORLD">
+    <RPY> 0 0 0 </RPY>
+    <Pos> -1 0 0.5 </Pos>
+ </Frame>
+ <Include file="MitsubishiPA10/pa10.wc.xml" />
+
+
+ <Frame name="Environment" refframe="WORLD">
+    <RPY> 0 0 0 </RPY>
+    <Pos> 0 1 0.5 </Pos>
+    
+ </Frame>
+
+ 
+
+
+</WorkCell>
