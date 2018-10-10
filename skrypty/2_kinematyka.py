@@ -2,10 +2,8 @@
 
 # importuj biblioteki
 import sys
-sys.path.append('/home/dagothar/robwork/RobWork/libs/release')
-sys.path.append('/home/dagothar/robwork/RobWorkSim/libs/release')
-sys.path.append('/home/dagothar/robwork/RobWorkStudio/libs/release')
-import rw, rws, rwsim
+sys.path.append('/home/dagothar/robwork/trunk/RobWork/libs/release')
+import rw
 
 
 # wczytanie komorki roboczej
